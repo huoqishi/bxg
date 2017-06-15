@@ -284,7 +284,10 @@
 <!--1. 引入RequireJS-->
 <!--2. 引入配置文件，和公共的文件, 和入口文件 list.js-->
 <!--4. 在 list.js 中定义模块(就是使用【define】方法)-->
-<!--5. 在 list.js 中的define中【引入需要使用的包】,jquery, art-template 如何想不起来要用哪个，则可以用到时再引入-->
+<!--5. 在 list.js 中的define中【引入需要使用的包】,jquery, art-template 如果想不起来要用哪个，则可以用到时再引入-->
+<!--6. 在 list.js 完成中获取讲师列表，并展示-->
+<!--7. 在 list.js 完成点击查看按钮，查看讲师查看讲师详情-->
+<!--8. 在 list.js 完成点击注销按钮，完成注销讲师-->
 <script src="/node_modules/requirejs/require.js"></script>
 <script>
   require(['/assets/js/config.js', '/assets/js/common.js', '/assets/js/teacher/list.js'])

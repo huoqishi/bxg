@@ -8,11 +8,18 @@ require.config({
     cookie: 'jquery.cookie/jquery.cookie',
     nprogress: 'nprogress/nprogress',
     template: 'art-template/lib/template-web',
-    bootstrap: 'bootstrap/dist/js/bootstrap'
+    bootstrap: 'bootstrap/dist/js/bootstrap',
+    datepicker: 'bootstrap-datepicker/dist/js/bootstrap-datepicker',
+    locales: 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min',
+    validation: 'jquery-validation/dist/jquery.validate',
+    form: 'jquery-form/dist/jquery.form.min'
   },
   shim: {
     bootstrap: {
       deps: ['jquery']
+    },
+    locales: {
+      deps: ['jquery', 'datepicker']
     }
   }
 })

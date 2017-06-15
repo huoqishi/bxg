@@ -199,3 +199,15 @@
 </body>
 
 </html>
+<!--1. 引入RequireJS-->
+<!--2. 引入配置文件，和公共的文件, 和入口文件 add.js-->
+<!--4. 在 add.js 中定义模块(就是使用【define】方法)-->
+<!--5. 在 add.js 中的define中【引入需要使用的包】,jquery, jquery-validation, jquery-form 如果想不起来要用哪个，则可以用到时再引入-->
+<!--6. 在 add.js 使用日期插件bootstrap-datepicker对日期框进行初始化-->
+<!--7. 在 add.js 使用jquery-validate插件完成对表单控件的验证-->
+<!--8. 在 add.js 使用jquery-form插件将表单数据发给后端-->
+<!--9. 在 add.js 完成表单提交成功后, 重置表单控件的值-->
+<script src="/node_modules/requirejs/require.js"></script>
+<script>
+require(['/assets/js/config.js', '/assets/js/common.js', '/assets/js/teacher/add.js'])
+</script>
