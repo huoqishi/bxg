@@ -1,0 +1,19 @@
+{
+  "name": "bxg",
+  "version": "1.0.0",
+  "description": "> 使用前端后分离的开发方式, 最后再用.php文件简化路径\r > 也可以用.php来提取公共部分!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^1.12.4",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "requirejs": "^2.3.3",
+    "jquery.cookie": "^1.4.1"
+  }
+}

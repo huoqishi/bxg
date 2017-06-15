@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学IT - 后台管理系统</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../node_modules/nprogress/nprogress.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+</head>
+<body>
+    <!-- 登录 -->
+    <div class="login">
+        <div class="login-wrap">
+            <div class="avatar">
+                <img src="../../assets/img/monkey.png" class="img-circle" alt="">
+            </div>
+            <form action="" class="col-xs-offset-1 col-xs-10">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <i class="fa fa-user"></i>
+                    </span>
+                    <input id="name" type="text" class="form-control" placeholder="用户名"
+                    value="前端学院">
+                </div>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <i class="fa fa-key"></i>
+                    </span>
+                    <input id="pass" type="password" class="form-control" placeholder="密码"
+                    value="123456">
+                </div>
+                <button type="submit" class="signin btn btn-lg btn-primary btn-block">登 录</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<!--1. 引入RequireJS-->
+<!--2. 配置RequireJS, 把baseUrl, paths, shim 需要配置的都配置好-->
+<!--3. 引入入口文件login.js-->
+<!--4. 在login.js中定义模块(就是使用【define】方法)-->
+<!--5. 在login.js中的define中【引入需要使用的包】,如果jquery, jquery.cookie, 
+如何想不起来要用哪个，则可以用到时再引入-->
+<!--6. 在login.js中的define的回调函数中给登陆按钮【注册点击事件】-->
+<!--7. 在6中的点击事件中，获取用户输入的【用户名】和【密码】-->
+<!--8. 判断用户名或者密码是否为空, 如果有一个为空，则给用户一个提示，结束点击事件回调函数的执行-->
+<!--9, 如果8中判断的结果都不为空，则将用户名和密码通过jquery的ajax方法发送给后端 -->
+<!--10.在9点success回调函数中判断，如果后端响应的数据的 code 属性值为200, 则表明登陆成功-->
+<!--11.如果登陆成功，则把后端响应的数据中的用户头像和用户名保存到cookie中, 方便在首页中获取-->
+<!--12.如果登陆没有成功, 则给用户一个登陆失败的提示，并清空表单控件-->
+
+<!--1. 引入RequireJS-->
+<script src="/node_modules/requirejs/require.js"></script>
+<script>
+// 2. 配置
+require.config({
+  baseUrl: '/node_modules',
+  paths: {
+    jquery: 'jquery/dist/jquery',
+    cookie: 'jquery.cookie/jquery.cookie'
+  }
+})
+// 3. 引入入口文件
+require(['/assets/js/index/login.js'])
+</script>
