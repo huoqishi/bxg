@@ -178,3 +178,16 @@
     </div>
 </body>
 </html>
+<!--1. 引入RequireJS-->
+<!--2. 配置RequireJS, 把baseUrl, paths, shim 需要配置的都配置好, 
+这一次我把配置的代码写到一个单独的文件中去 config.js-->
+<!--3. 多个页面都会使用到的js代码，写入到一个公共的js文件中去 common.js-->
+<!--3. 引入配置文件，和公共的文件, 和入口文件 dashboard.js-->
+<!--4. 在 dashboard.js 中定义模块(就是使用【define】方法)-->
+<!--5. 在 dashboard.js 中的define中【引入需要使用的包】, 如何想不起来要用哪个，则可以用到时再引入-->
+
+<script src="/node_modules/requirejs/require.js"></script>
+<script>
+  // 引入RequireJS的配置文件，和页面公用的js文件，和入口js文件
+  require(['/assets/js/config.js', '/assets/js/common.js', '/assets/js/index/dashboard.js'])
+</script>
