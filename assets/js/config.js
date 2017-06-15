@@ -6,9 +6,13 @@ require.config({
   paths: {
     jquery: 'jquery/dist/jquery',
     cookie: 'jquery.cookie/jquery.cookie',
-    nprogress: '/node_modules/nprogress/nprogress'
+    nprogress: 'nprogress/nprogress',
+    template: 'art-template/lib/template-web',
+    bootstrap: 'bootstrap/dist/js/bootstrap'
   },
   shim: {
-
+    bootstrap: {
+      deps: ['jquery']
+    }
   }
 })

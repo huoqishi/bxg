@@ -171,7 +171,7 @@
                                 <th>操作</th>
                             </tr>
                         </thead>
-                        <tbody id="list">
+                        <tbody id="tec-list">
                             <tr>
                                 <td>1</td>
                                 <td>天下二</td>
@@ -257,7 +257,7 @@
         <!-- $value表示数据中的数据, 如果不想用$value，可以改
         each list as item // 将$value改变为了item-->
         {{each list}}
-        <tr tc-id="{{$value.tc_id}}" tc-status="{{$value.tc_status}}">
+        <tr>
             <td>{{$index}}</td>
             <td>{{$value.tc_name}}</td>
             <td>{{$value.tc_roster}}</td>
@@ -267,17 +267,25 @@
             <td>{{$value.tc_birthday|getAge}}</td>
             <td>{{$value.tc_gender}}</td>
             <td>{{$value.tc_cellphone}}</td>
-            <td>
-                <a  href="javascript:;" class=" showmodal preview btn btn-info btn-xs">查 看</a>
+            <td data-id="{{$value.tc_id}}" data-status="{{$value.tc_status}}">
+                <a href="javascript:;" class=" showmodal btn btn-info btn-xs">查 看</a>
                 <a href="/views/teacher/edit.html?tc_id={{$value.tc_id}}" class="btn btn-info btn-xs">编 辑</a>
-            <a status="{{$value.tc_status}}" href="javascript:" class="logout start-stop btn btn-warning btn-xs">
-                <!--如果为0 则显示注销-->
-                <!--如果值是0, 讲师当前的状态是没有被注销的状态-->
-                {{$value.tc_status === '0' ? '注销' : '启用'}}
-            </a>
+                <a href="javascript:" class="start-stop btn btn-warning btn-xs">
+                    <!--如果为0 则显示注销-->
+                    <!--如果值是0, 讲师当前的状态是没有被注销的状态-->
+                    {{$value.tc_status === '0' ? '注销' : '启用'}}
+                </a>
             </td>
         </tr>
         {{/each}}
     </script>
 </body>
 </html>
+<!--1. 引入RequireJS-->
+<!--2. 引入配置文件，和公共的文件, 和入口文件 list.js-->
+<!--4. 在 list.js 中定义模块(就是使用【define】方法)-->
+<!--5. 在 list.js 中的define中【引入需要使用的包】,jquery, art-template 如何想不起来要用哪个，则可以用到时再引入-->
+<script src="/node_modules/requirejs/require.js"></script>
+<script>
+  require(['/assets/js/config.js', '/assets/js/common.js', '/assets/js/teacher/list.js'])
+</script>
