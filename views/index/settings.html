@@ -260,7 +260,7 @@
     <label for="" class="col-xs-3 control-label">头像</label>
     <div class="col-xs-2 preview">
         <img id="upfileimg" src="{{tc_avatar}}">
-        <input type="file" id="upfile" name="tc_avatar">
+        <input type="file" id="upfile"  name="tc_avatar">
         <div class="cover">
             <i class="fa fa-upload"></i>
         </div>
@@ -348,4 +348,16 @@
         <a href="./repass.html" class="btn btn-link btn-sm pull-right">更改密码？</a>
     </div>
 </div>
+</script>
+<!--1. 引入RequireJS-->
+<!--2. 引入配置文件，和公共的文件, 和入口文件 list.js-->
+<!--4. 在 settings.js 中定义模块(就是使用【define】方法)-->
+<!--5. 在 settings.js 中的define中【引入需要使用的包】如果想不起来要用哪个，则可以用到时再引入-->
+<!--6. 在 settings.js 中获取用户信息并展示在form表单中-->
+<!--7. 在 settings.js 中完成上传头像功能->
+<!--8. 在 settings.js 中完成日期插件的初始化-->
+<!--9. 在 settings.js 中完成对表单控件的的验证-->
+<script src="/node_modules/requirejs/require.js"></script>
+<script>
+    require(['/assets/js/config.js', '/assets/js/common.js', '/assets/js/index/settings.js'])
 </script>

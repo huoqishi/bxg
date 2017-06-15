@@ -12,7 +12,8 @@ require.config({
     datepicker: 'bootstrap-datepicker/dist/js/bootstrap-datepicker',
     locales: 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min',
     validation: 'jquery-validation/dist/jquery.validate',
-    form: 'jquery-form/dist/jquery.form.min'
+    form: 'jquery-form/dist/jquery.form.min',
+    uploadify: '/assets/libs/uploadify/jquery.uploadify'
   },
   shim: {
     bootstrap: {
@@ -20,6 +21,9 @@ require.config({
     },
     locales: {
       deps: ['jquery', 'datepicker']
+    },
+    uploadify: {
+      deps: ['jquery']
     }
   }
 })
